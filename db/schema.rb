@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_015505) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "prototype_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "prototype_id"
+    t.bigint "user_id"
     t.text "text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2021_03_18_015505) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "name", null: false
     t.text "profile", null: false
     t.text "occupation", null: false
     t.text "position", null: false
